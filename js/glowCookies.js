@@ -450,8 +450,6 @@ class LanguagesGC {
       },
       ru: {
         bannerHeading: "Позвольте использовать куки?",
-        bannerDescription:
-          "Мы используем собственные и сторонние куки для персонализации контента и анализа веб-трафика.",
         bannerLinkText: "Узнать больше про куки.",
         acceptBtnText: "Ок, используйте",
         rejectBtnText: "Не разрешаю",
