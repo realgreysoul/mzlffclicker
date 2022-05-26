@@ -63,8 +63,7 @@ class GlowCookies {
                                             class="read__more"
                                             style="color: #0034f3;"
                                         >
-                                            ${this.banner.linkText}
-                                        </a>.
+                                            ${this.banner.linkText}</a>.
                                     </p>
                                     <div class="btn__section">
                                         <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
