@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/material.css" />
     <link rel="stylesheet" href="css/w3.css" />
     <link rel="stylesheet" href="css/material-icons.css" />
-    <link rel="stylesheet" href="css/material.light_blue-indigo.min.css" />
+    <link rel="stylesheet" href="css/material.light_blue-indigo.css" />
     <link rel="preconnect" href="//images.ctfassets.net" />
     <link rel="dns-prefetch" href="//images.ctfassets.net" />
     <link rel="preconnect" href="//assets.ctfassets.net" />
@@ -603,12 +603,9 @@
       <div id="deleteSaveDialog" class="w3-modal">
         <div class="w3-modal-content">
           <div class="w3-container">
-            <h3>Сбросить все данные от игры?</h3>
+            <h3>Сбросить все данные?</h3>
             <p>Вы уверены, что хотите сбросить все данные?</p>
-            <p>
-              Это действие сбросит <b><u>все</u></b> данные от этой игры,
-              включая статистику.
-            </p>
+            <p>Это действие сбросит все данные, включая статистику.</p>
             <br />
             <button
               id="yesDelete"
@@ -630,6 +627,23 @@
         <button class="mdl-snackbar__action" type="button"></button>
       </div>
     </div>
+    <script src="js/glowCookies.js"></script>
+    <script>
+      glowCookies.start("ru", {
+        style: 2,
+        position: "right",
+        border: "border",
+        hideAfterClick: true,
+        bannerHeading:
+          "<b>Данный сайт использует </b><i>нахуй никому не нужные</i><b> файлы cookie</b>",
+        bannerColor: "black",
+        acceptBtnText: "Ок, мне на это похуй",
+        acceptBtnBackground: "yellow",
+        acceptBtnColor: "black",
+        bannerLinkText: "Нажмите сюда",
+        policyLink: "https://go.greysoul.ru/JdkG",
+      });
+    </script>
     <script src="js/material.min.js"></script>
     <script src="js/click-handler.js"></script>
     <script src="js/upgrade-handler.js"></script>
@@ -648,22 +662,5 @@
     <script src="js/upgrades/click-portal.js"></script>
     <script src="js/cases/sound-case.js"></script>
     <script src="js/cases/click-case.js"></script>
-    <script src="js/glowCookies.js"></script>
-    <script>
-      glowCookies.start("ru", {
-        style: 2,
-        position: "right",
-        border: "border",
-        hideAfterClick: true,
-        bannerHeading:
-          "<b>Данный сайт использует </b><i>нахуй никому не нужные</i><b> файлы cookie</b>",
-        bannerColor: "black",
-        acceptBtnText: "Ок, мне на это похуй",
-        acceptBtnBackground: "yellow",
-        acceptBtnColor: "black",
-        bannerLinkText: "Нажмите сюда",
-        policyLink: "https://go.greysoul.ru/JdkG"
-      });
-    </script>
   </body>
 </html>
