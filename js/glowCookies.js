@@ -49,15 +49,22 @@ class GlowCookies {
                                     style="background-color: ${this.banner.background};"
                                 >
                                     <h3 style="color: ${this.banner.color};">${this.banner.heading}</h3>
-                                    <p style="color: ${this.banner.color};">
-                                        ${this.banner.description} 
+                                    <p style="color: #606060;">
+                                      <i>«Что это за хуйня?»</i> — подумали вы?
+                                    </p>
+                                    <p style="color: #606060;">
+                                      Благодаря файлам cookie все ваши чикенбеконы, выебоны, наёбки и вся ваша статистика сохраняется.
+                                    </p>
+                                    <p style="color: #606060;">
+                                      Всё ещё не поняли, что это за хуйня, и хотите разузнать всё?
                                         <a 
                                             href="${this.banner.link}"
                                             target="_blank" 
                                             class="read__more"
-                                            style="color: ${this.banner.color};"
+                                            style="color: #0034f3;"
                                         >
-                                            ${this.banner.linkText}</a>.
+                                            ${this.banner.linkText}
+                                        </a>.
                                     </p>
                                     <div class="btn__section">
                                         <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
