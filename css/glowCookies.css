@@ -60,14 +60,6 @@
 
 .glowCookies__banner .btn__section button:focus {
   outline: none;
-  transform: scale(0.95);
-  -webkit-filter: contrast(75%);
-  filter: contrast(75%);
-}
-
-.glowCookies__banner .btn__section button:hover {
-  -webkit-filter: contrast(85%);
-  filter: contrast(85%);
 }
 
 @media (max-width: 455px) {

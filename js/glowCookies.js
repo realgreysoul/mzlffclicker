@@ -66,7 +66,7 @@ class GlowCookies {
                                             ${this.banner.linkText}</a>.
                                     </p>
                                     <div class="btn__section">
-                                        <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
+                                        <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles mdl-button-glowCookies mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
                                             ${this.banner.acceptBtn.text}
                                         </button>
                                     </div>

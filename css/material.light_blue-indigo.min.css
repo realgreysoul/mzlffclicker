@@ -2301,6 +2301,16 @@ ol {
   line-height: 36px;
   vertical-align: middle;
 }
+.mdl-button-glowCookies {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  overflow: hidden;
+  will-change: box-shadow;
+  outline: none;
+  text-decoration: none;
+  vertical-align: middle;
+}
 .mdl-button::-moz-focus-inner {
   border: 0;
 }
