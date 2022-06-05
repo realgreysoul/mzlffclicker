@@ -59,63 +59,6 @@
   }
 }
 
-/* BANNER STYLE 1 */
-/* ========================= */
-.glowCookies__banner__1 {
-  bottom: 15px;
-  border-radius: 20px;
-  padding: 20px 25px;
-}
-
-.glowCookies__banner__1 > h3 {
-  font-size: 24px;
-  margin: 0px;
-  padding: 8px 0;
-}
-
-.glowCookies__banner__1 > p {
-  font-size: 15px;
-  margin: 0px;
-  padding: 0px;
-  line-height: 1.3;
-}
-
-.glowCookies__banner__1 .read__more {
-  font-weight: bolder;
-}
-
-.glowCookies__banner__1 .read__more:hover {
-  color: #666666;
-}
-
-.glowCookies__banner__1 .btn__section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.glowCookies__banner__1 .btn__section button {
-  border-radius: 10px;
-}
-
-@media (max-width: 455px) {
-  .glowCookies__banner__1 {
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin: 7px;
-  }
-
-  .glowCookies__banner__1 .btn__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-}
-
 /* BANNER STYLE 2 */
 /* ========================= */
 .glowCookies__banner__2 {
@@ -170,65 +113,6 @@
   }
 
   .glowCookies__banner__2 .btn__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-}
-
-/* BANNER STYLE 3 */
-/* ========================= */
-.glowCookies__banner__3 {
-  bottom: 15px;
-  border-radius: 0px;
-  padding: 25px 35px;
-}
-
-.glowCookies__banner__3 > h3 {
-  font-size: 30px;
-  margin: 0px;
-  padding: 8px 0;
-}
-
-.glowCookies__banner__3 > p {
-  font-size: 15px;
-  margin: 0px;
-  padding: 0px;
-  line-height: 1.3;
-}
-
-.glowCookies__banner__3 .read__more {
-  font-weight: bolder;
-}
-
-.glowCookies__banner__3 .read__more:hover {
-  opacity: 0.8;
-}
-
-.glowCookies__banner__3 .btn__section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin-top: 25px;
-}
-
-.glowCookies__banner__3 .btn__section button {
-  border-radius: 0px;
-}
-
-@media (max-width: 455px) {
-  .glowCookies__banner__3 {
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    border-radius: 0px;
-    border: 0px;
-    max-width: 550px;
-  }
-
-  .glowCookies__banner__3 .btn__section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
