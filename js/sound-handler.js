@@ -54,9 +54,19 @@ function playSound(e) {
           `https://assets.ctfassets.net/1pxughrhgws1/6rTTKBW6ZsVWeV0LhK6Hee/8adc2acb4f1198eccd4bbcd32b66ffec/${e}.ogg`
         ).play();
         break;
+      case "LoudBurping3":
+        new Audio(
+          `https://assets.ctfassets.net/1pxughrhgws1/3rvJiOZfe8HDjQPOCSYl2H/1be21debf7da48d9cd0d48db4f316a1b/${e}.ogg`
+        ).play();
+        break;
       case "Mom":
         new Audio(
           `https://assets.ctfassets.net/1pxughrhgws1/53fjTaSXcix3DAhAeRNMjR/f0ec0de5344cb6471ccc69ffcc7caa72/${e}.ogg`
+        ).play();
+        break;
+      case "SonOfAWhore":
+        new Audio(
+          `https://assets.ctfassets.net/1pxughrhgws1/4KqsdX5zO6Ih6fYKc8wobT/1d932cf6bf6af198cd88753c7813d47b/${e}.ogg`
         ).play();
         break;
       case "Secret":
@@ -113,8 +123,12 @@ function soundIdify(e) {
       return "LoudBurping";
     case "МЯУ 2":
       return "LoudBurping2";
+    case "МЯУ 3":
+      return "LoudBurping3";
     case "Мама...":
       return "Mom";
+    case "СЫН ШЛЮХИ D:":
+      return "SonOfAWhore";
     case "*секрет*":
       return "Secret";
     default:
@@ -144,8 +158,12 @@ function soundUnIdify(e) {
       return "МЯУ";
     case "LoudBurping2":
       return "МЯУ 2";
+    case "LoudBurping3":
+      return "МЯУ 3";
     case "Mom":
       return "Мама...";
+    case "SonOfAWhore":
+      return "СЫН ШЛЮХИ D:";
     case "Secret":
       return "*секрет*";
     default:

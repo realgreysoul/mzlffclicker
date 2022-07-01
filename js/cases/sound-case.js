@@ -9,7 +9,9 @@ var soundCaseTimeout,
     "Who-o-o",
     "LoudBurping",
     "LoudBurping2",
+    "LoudBurping3",
     "Mom",
+    "SonOfAWhore",
     "Secret",
   ];
 function getSoundCaseResult() {
