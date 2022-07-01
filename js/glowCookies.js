@@ -50,13 +50,7 @@ class GlowCookies {
                                 >
                                     <h3 style="color: ${this.banner.color};">${this.banner.heading}</h3>
                                     <p style="color: #606060;">
-                                      <i>«Что это за хуйня?»</i> — подумали вы?
-                                    </p>
-                                    <p style="color: #606060;">
-                                      Благодаря файлам cookie все ваши чикенбеконы, выебоны, наёбки и вся ваша статистика сохраняется.
-                                    </p>
-                                    <p style="color: #606060;">
-                                      Всё ещё не поняли, что это за хуйня, и хотите разузнать всё?
+                                      ${this.banner.description}
                                         <a 
                                             href="${this.banner.link}"
                                             target="_blank" 
@@ -301,7 +295,7 @@ class GlowCookies {
 class LanguagesGC {
   constructor(code) {
     this.init();
-    let lang = this.arrLang[code] || this.arrLang["en"];
+    let lang = this.arrLang[code] || this.arrLang["ru"];
     this.bannerHeading = lang["bannerHeading"];
     this.bannerDescription = lang["bannerDescription"];
     this.bannerLinkText = lang["bannerLinkText"];
@@ -313,11 +307,12 @@ class LanguagesGC {
   init() {
     this.arrLang = {
       ru: {
-        bannerHeading: "Позвольте использовать куки?",
-        bannerLinkText: "Узнать больше про куки.",
-        acceptBtnText: "Ок, используйте",
-        rejectBtnText: "Не разрешаю",
-        manageText: "Разрешите использовать куки?",
+        bannerHeading:
+          "Данный сайт использует <i>нахуй никому не нужные</i> файлы cookie",
+        bannerDescription:
+          "Благодаря файлам cookie все ваши чикенбеконы, выебоны, наёбки и вся ваша статистика сохраняется. Всё ещё не поняли, что это за хуйня, и хотите разузнать всё?",
+        bannerLinkText: "Нажмите сюда",
+        acceptBtnText: "Ок, мне на это похуй",
       },
     };
   }
