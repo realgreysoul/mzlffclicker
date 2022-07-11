@@ -1,18 +1,8 @@
-/*
-    GLOW COOKIES
-    CREATED BY MANUEL CARRILLO
-    https://github.com/manucaralmo/GlowCookies
-    2021 - v 3.1.3
-*/
-
 class GlowCookies {
   constructor() {
-    // Cookies banner
     this.banner = undefined;
-    // Config
     this.config = undefined;
     this.tracking = undefined;
-    // DOM ELEMENTS
     this.PreBanner = undefined;
     this.Cookies = undefined;
     this.DOMbanner = undefined;
@@ -32,7 +22,6 @@ class GlowCookies {
   }
 
   createDOMElements() {
-    // COOKIES BUTTON
     this.PreBanner = document.createElement("div");
     this.PreBanner.innerHTML = `<button type="button" id="prebannerBtn" class="prebanner prebanner__border__${this.config.bannerStyle} glowCookies__${this.config.position} glowCookies__${this.config.border} animation" style="color: ${this.banner.manageCookies.color}; background-color: ${this.banner.manageCookies.background};">
                                     <svg fill="currentColor" style="margin-right: 7px; margin-top: 2px; vertical-align: text-top;" height="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -41,7 +30,6 @@ class GlowCookies {
     this.PreBanner.style.display = "none";
     document.body.appendChild(this.PreBanner);
 
-    // COOKIES BANNER
     this.Cookies = document.createElement("div");
     this.Cookies.innerHTML = `<div 
                                     id="glowCookies-banner" 
@@ -69,7 +57,6 @@ class GlowCookies {
     document.body.appendChild(this.Cookies);
     this.DOMbanner = document.getElementById("glowCookies-banner");
 
-    // SET EVENT LISTENERS
     document
       .getElementById("prebannerBtn")
       .addEventListener("click", () => this.openSelector());
@@ -113,7 +100,6 @@ class GlowCookies {
   }
 
   activateTracking() {
-    // Google Analytics Tracking
     if (this.tracking.AnalyticsCode) {
       let Analytics = document.createElement("script");
       Analytics.setAttribute(
@@ -129,7 +115,6 @@ class GlowCookies {
       document.head.appendChild(AnalyticsData);
     }
 
-    // Facebook pixel tracking code
     if (this.tracking.FacebookPixelCode) {
       let FacebookPixelData = document.createElement("script");
       FacebookPixelData.text = `
@@ -156,7 +141,6 @@ class GlowCookies {
       document.head.appendChild(FacebookPixel);
     }
 
-    // Hotjar Tracking
     if (this.tracking.HotjarTrackingCode) {
       let hotjarTrackingData = document.createElement("script");
       hotjarTrackingData.text = `
@@ -174,7 +158,6 @@ class GlowCookies {
   }
 
   disableTracking() {
-    // Google Analytics Tracking ('client_storage': 'none')
     if (this.tracking.AnalyticsCode) {
       let Analytics = document.createElement("script");
       Analytics.setAttribute(
@@ -193,7 +176,6 @@ class GlowCookies {
       document.head.appendChild(AnalyticsData);
     }
 
-    // Clear cookies - not working 100%
     this.clearCookies();
   }
 
@@ -285,7 +267,6 @@ class GlowCookies {
       },
     };
 
-    // Draw banner
     window.addEventListener("load", () => {
       this.render();
     });
