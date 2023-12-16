@@ -2717,8 +2717,8 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__label,
 .mdl-checkbox__ripple-container {
   position: absolute;
   z-index: 2;
-  top: -6px;
-  left: -10px;
+  top: -5px;
+  left: -8px;
   box-sizing: border-box;
   width: 36px;
   height: 36px;
