@@ -615,6 +615,33 @@
         <button class="mdl-snackbar__action" type="button"></button>
       </div>
     </div>
+    <div id="warningDialog" class="w3-modal" style="display: none">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <h3>Внимание!</h3>
+          <p>
+            Сайт создан в
+            <a
+              id="warning"
+              data-umami-event="warning-clicker-2021-twitch-clip"
+              href="https://clips.twitch.tv/SuspiciousCredulousKumquatBrainSlug-15xJuJpYnXopD8tp"
+              target="_blank"
+              ><b>сентябре 2021 года</b></a
+            >
+            и содержит мемы того времени. Он практически не менялся, лишь
+            незначительно исправлялся. Автор осознаёт, что мемы устарели, но
+            сохраняет их как часть истории.
+          </p>
+          <br />
+          <button
+            id="warningOkay"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+          >
+            Понятно
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="js/material.min.js"></script>
     <script src="js/click-handler.js"></script>
     <script src="js/upgrade-handler.js"></script>
@@ -625,6 +652,7 @@
     <script src="js/stats.js"></script>
     <script src="js/case-handler.js"></script>
     <script src="js/settings-handler.js"></script>
+    <script src="js/warning.js"></script>
     <script src="js/upgrades/per-click.js"></script>
     <script src="js/upgrades/click-bomb.js"></script>
     <script src="js/upgrades/click-factory.js"></script>

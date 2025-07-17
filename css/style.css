@@ -39,6 +39,12 @@ a#footer {
 a:hover#footer {
   text-decoration: underline;
 }
+a#warning {
+  text-decoration: none;
+}
+a:hover#warning {
+  text-decoration: underline;
+}
 .setting {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -56,6 +62,9 @@ a:hover#footer {
   line-height: 0;
   color: #fff;
   background-color: red;
+}
+#warningDialog {
+  text-align: center;
 }
 h5#noCases {
   padding-bottom: 15px;
