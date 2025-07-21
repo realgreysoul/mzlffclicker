@@ -13,4 +13,4 @@ create-pages:
     - echo "No installation needed"
   script:
     - mkdir public
-    - cp -r * public
+    - find . -path ./public -prune -o -print | cpio -pdm public
