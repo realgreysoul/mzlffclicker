@@ -13,4 +13,4 @@ create-pages:
     - echo "No installation needed"
   script:
     - mkdir public
-    - mkdir -p public && find . -path ./public -prune -o \( -type d -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.ico' -o -name '*.woff2' \) -print | cpio -pdm public
+    - find . -path ./public -prune -o -path ./.git -prune -o \( -type d -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.ico' -o -name '*.woff2' \) -print | cpio -pdm public
