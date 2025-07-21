@@ -13,4 +13,4 @@ create-pages:
     - echo "No installation needed"
   script:
     - mkdir public
-    - find . -path ./public -prune -o -path ./.git -prune -o -name .gitlab-ci.yml -prune -o -name LICENSE -prune -o -name README.md -prune -o -print | cpio -pdm public
+    - mkdir -p public && find . -path ./public -prune -o \( -type d -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.ico' -o -name '*.woff2' \) -print | cpio -pdm public
