@@ -21,24 +21,22 @@ jobs:
         uses: actions/checkout@v6.0.2
       - name: Filter files
         run: |
-          mkdir deploy
-          rsync -av --include='*/' \
-            --include='*.woff2' \
-            --include='*.html' \
-            --include='*.ico' \
-            --include='*.css' \
-            --include='*.js' \
-            --include='*.png' \
-            --include='*.jpg' \
-            --exclude='*' \
-            --exclude='.git' \
-            . deploy/
+          find . -not -path './.git/*' -type f \
+            ! -name "*.woff2" \
+            ! -name "*.html" \
+            ! -name "*.ico" \
+            ! -name "*.css" \
+            ! -name "*.js" \
+            ! -name "*.png" \
+            ! -name "*.jpg" \
+            -delete
+          find . -not -path './.git/*' -empty -type d -delete
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "deploy"
+          path: "."
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5
