@@ -22,15 +22,17 @@ jobs:
       - name: Filter files
         run: |
           mkdir deploy
-          find . -not -path './.git/*' \( \
-            -name "*.woff2" -o \
-            -name "*.html" -o \
-            -name "*.ico" -o \
-            -name "*.css" -o \
-            -name "*.js" -o \
-            -name "*.png" -o \
-            -name "*.jpg" \
-          \) -exec cp --parents {} deploy/ \;
+          rsync -av --include='*/' \
+            --include='*.woff2' \
+            --include='*.html' \
+            --include='*.ico' \
+            --include='*.css' \
+            --include='*.js' \
+            --include='*.png' \
+            --include='*.jpg' \
+            --exclude='*' \
+            --exclude='.git' \
+            . deploy/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
