@@ -62,18 +62,20 @@ function loadGame() {
     : console.log("No saved data, not loading data.");
 }
 function deleteSave() {
-  (deleteSaveDialog.style.display = "block"),
-    document.getElementById("yesDelete").addEventListener("click", function () {
-      console.log("Deleting save..."),
-        localStorage.clear(),
-        (saveOnReload = !1),
-        console.log("Save deleted, reloading..."),
-        location.reload();
-    }),
-    document.getElementById("noDelete").addEventListener("click", function () {
-      deleteSaveDialog.style.display = "none";
-    });
+  showModal(deleteSaveDialog);
 }
+
+document.getElementById("yesDelete").addEventListener("click", function () {
+  console.log("Deleting save..."),
+    localStorage.clear(),
+    (saveOnReload = !1),
+    console.log("Save deleted, reloading..."),
+    location.reload();
+});
+
+document.getElementById("noDelete").addEventListener("click", function () {
+  closeModal(deleteSaveDialog);
+});
 window.addEventListener("beforeunload", function () {
   saveOnReload && saveGame();
 });

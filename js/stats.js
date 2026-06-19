@@ -16,8 +16,8 @@ function showStats() {
     (totalClicksText.innerText = "Всего кликов мышью: " + totalClicks),
     (upgradesBoughtText.innerText = "Все купленные выебоны: " + upgradesBought),
     (casesOpenedText.innerText = "Открытые наёбки: " + casesOpened),
-    (statsDialog.style.display = "block");
+    showModal(statsDialog);
 }
 document.getElementById("statsOkay").addEventListener("click", function () {
-  statsDialog.style.display = "none";
+  closeModal(statsDialog);
 });

@@ -10,7 +10,7 @@ function showSettings() {
     ((e = document.createElement("option")).value = unlockedClickSounds[x]),
       (e.innerText = soundUnIdify(unlockedClickSounds[x])),
       clickSoundSelector.append(e);
-  settingsDialog.style.display = "block";
+  showModal(settingsDialog);
 }
 function doUpdate() {
   clickSound = clickSoundSelector.value;
@@ -19,10 +19,10 @@ document.getElementById("settingsSave").addEventListener("click", function () {
   console.log("Updating settings..."),
     doUpdate(),
     console.log("Settings updated!"),
-    (settingsDialog.style.display = "none");
+    closeModal(settingsDialog);
 }),
   document
     .getElementById("settingsClose")
     .addEventListener("click", function () {
-      settingsDialog.style.display = "none";
+      closeModal(settingsDialog);
     });

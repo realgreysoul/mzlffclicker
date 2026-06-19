@@ -31,8 +31,7 @@ function buyPerClick() {
       (clickCount.innerText = `Чикенбеконов: ${clicks}`),
       (perClick = perClickLevelData[perClickLevel].perClick),
       (clicker.innerText = "ТРАХНУТЬ (+" + perClick + ")"),
-      clicker.classList.remove("mdl-js-ripple-effect"),
-      clicker.classList.add("mdl-js-ripple-effect"),
+      reinitializeClickerRipple(),
       ++perClickLevel >= perClickLevelData.length)
     )
       (perClickCard.style.display = "none"),
@@ -59,6 +58,7 @@ function loadPerClick() {
     if (
       ((perClick = perClickLevelData[perClickLevel - 1].perClick),
       (clicker.innerText = "ТРАХНУТЬ (+" + perClick + ")"),
+      reinitializeClickerRipple(),
       perClickLevel >= perClickLevelData.length)
     )
       (perClickCard.style.display = "none"),
