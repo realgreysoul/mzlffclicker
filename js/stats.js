@@ -11,12 +11,12 @@ function checkStats() {
   clicks > highestClicks && (highestClicks = clicks);
 }
 function showStats() {
-  (highestClicksText.innerText =
+  ((highestClicksText.innerText =
     "Наибольшее количество чикенбеконов: " + highestClicks),
     (totalClicksText.innerText = "Всего кликов мышью: " + totalClicks),
     (upgradesBoughtText.innerText = "Все купленные выебоны: " + upgradesBought),
     (casesOpenedText.innerText = "Открытые наёбки: " + casesOpened),
-    showModal(statsDialog);
+    showModal(statsDialog));
 }
 document.getElementById("statsOkay").addEventListener("click", function () {
   closeModal(statsDialog);

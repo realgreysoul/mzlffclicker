@@ -2,7 +2,7 @@ var deleteSaveDialog = document.getElementById("deleteSaveDialog"),
   mobileSounds = document.getElementById("mobileSounds"),
   saveOnReload = !0;
 function saveGame() {
-  console.log("Saving..."),
+  (console.log("Saving..."),
     localStorage.setItem("clicks", clicks),
     localStorage.setItem("perClickLevel", perClickLevel),
     localStorage.setItem("clickBombLevel", clickBombLevel),
@@ -18,8 +18,12 @@ function saveGame() {
     localStorage.setItem("clickSound", clickSound),
     localStorage.setItem("casesInventory", casesInventory),
     localStorage.setItem("caseData", JSON.stringify(caseData)),
+    localStorage.setItem(
+      "mobileSoundsEnabled",
+      document.getElementById("mobileSoundsCheckbox").checked,
+    ),
     console.log("Saved!"),
-    console.log(localStorage);
+    console.log(localStorage));
   snackbar.MaterialSnackbar.showSnackbar({
     message: "Игра успешно сохранена!",
     timeout: 2e3,
@@ -60,17 +64,26 @@ function loadGame() {
       (caseData = JSON.parse(localStorage.caseData)),
       console.log("Save data loaded!"))
     : console.log("No saved data, not loading data.");
+  loadMobileSoundsSetting();
+}
+function loadMobileSoundsSetting() {
+  if (void 0 === localStorage.mobileSoundsEnabled) return;
+  var enabled = "true" === localStorage.mobileSoundsEnabled,
+    checkbox = document.getElementById("mobileSoundsCheckbox");
+  checkbox.MaterialCheckbox
+    ? checkbox.MaterialCheckbox[enabled ? "check" : "uncheck"]()
+    : (checkbox.checked = enabled);
 }
 function deleteSave() {
   showModal(deleteSaveDialog);
 }
 
 document.getElementById("yesDelete").addEventListener("click", function () {
-  console.log("Deleting save..."),
+  (console.log("Deleting save..."),
     localStorage.clear(),
     (saveOnReload = !1),
     console.log("Save deleted, reloading..."),
-    location.reload();
+    location.reload());
 });
 
 document.getElementById("noDelete").addEventListener("click", function () {

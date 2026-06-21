@@ -25,27 +25,27 @@ function buyClickMiner() {
       (clickMinerInterval = setInterval(function () {
         var e = generateNumberBetween(
           clickMinerLevelData[clickMinerLevel - 1].low,
-          clickMinerLevelData[clickMinerLevel - 1].high
+          clickMinerLevelData[clickMinerLevel - 1].high,
         );
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
-          checkStats();
+          checkStats());
       }, 1e4)),
       ++clickMinerLevel >= clickMinerLevelData.length)
     )
-      (clickMinerCard.style.display = "none"),
+      ((clickMinerCard.style.display = "none"),
         (clickMinerSpacer.style.display = "none"),
-        (clickMinerMax = !0);
+        (clickMinerMax = !0));
     else {
       var e = clickMinerLevel + 1,
         i = clickMinerLevelData[clickMinerLevel].price;
-      (clickMinerCardTitle.innerText = "БАТОН (Уровень " + e + ")"),
-        (clickMinerCardPrice.innerText = "Проебать " + i + " чикенбеконов");
+      ((clickMinerCardTitle.innerText = "БАТОН (Уровень " + e + ")"),
+        (clickMinerCardPrice.innerText = "Проебать " + i + " чикенбеконов"));
     }
-    upgradesBought++,
+    (upgradesBought++,
       playSound("NewUpgrade"),
-      console.log(`Bought Upgrade: БАТОН, Level: ${clickMinerLevel}.`);
+      console.log(`Bought Upgrade: БАТОН, Level: ${clickMinerLevel}.`));
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Недостаточно чикенбеконов!",
@@ -60,24 +60,24 @@ function loadClickMiner() {
       ((clickMinerInterval = setInterval(function () {
         var i = generateNumberBetween(
           clickMinerLevelData[e].low,
-          clickMinerLevelData[e].high
+          clickMinerLevelData[e].high,
         );
-        (clicks += i),
+        ((clicks += i),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
           checkStats(),
-          checkCases();
+          checkCases());
       }, 1e4)),
       clickMinerLevel >= clickMinerLevelData.length)
     )
-      (clickMinerCard.style.display = "none"),
+      ((clickMinerCard.style.display = "none"),
         (clickMinerSpacer.style.display = "none"),
-        (clickMinerMax = !0);
+        (clickMinerMax = !0));
     else {
       var i = clickMinerLevel + 1,
         c = clickMinerLevelData[clickMinerLevel].price;
-      (clickMinerCardTitle.innerText = "БАТОН (Уровень " + i + ")"),
-        (clickMinerCardPrice.innerText = "Проебать " + c + " чикенбеконов");
+      ((clickMinerCardTitle.innerText = "БАТОН (Уровень " + i + ")"),
+        (clickMinerCardPrice.innerText = "Проебать " + c + " чикенбеконов"));
     }
   }
 }

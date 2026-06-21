@@ -20,35 +20,35 @@ var autoClickerInterval,
   ];
 function buyAutoClicker() {
   if (clicks >= autoClickerLevelData[autoClickerLevel].price) {
-    (clicks -= autoClickerLevelData[autoClickerLevel].price),
+    ((clicks -= autoClickerLevelData[autoClickerLevel].price),
       (clickCount.innerText = `Чикенбеконов: ${clicks}`),
-      clearInterval(autoClickerInterval);
+      clearInterval(autoClickerInterval));
     var e = autoClickerLevelData[autoClickerLevel].perSecond / 10;
     if (
       ((autoClickerInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clicks = Number(clicks.toFixed(2))),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
           checkStats(),
-          checkCases();
+          checkCases());
       }, 100)),
       ++autoClickerLevel >= autoClickerLevelData.length)
     )
-      (autoClickerCard.style.display = "none"),
+      ((autoClickerCard.style.display = "none"),
         (autoClickerSpacer.style.display = "none"),
-        (autoClickerMax = !0);
+        (autoClickerMax = !0));
     else {
       var l = autoClickerLevel + 1,
         c = autoClickerLevelData[autoClickerLevel].price;
-      (autoClickerCardTitle.innerText = "БОЛЬШАЯ СОСИСКА (Уровень " + l + ")"),
-        (autoClickerCardPrice.innerText = "Проебать " + c + " чикенбеконов");
+      ((autoClickerCardTitle.innerText = "БОЛЬШАЯ СОСИСКА (Уровень " + l + ")"),
+        (autoClickerCardPrice.innerText = "Проебать " + c + " чикенбеконов"));
     }
-    upgradesBought++,
+    (upgradesBought++,
       playSound("NewUpgrade"),
       console.log(
-        `Bought Upgrade: БОЛЬШАЯ СОСИСКА, Level: ${autoClickerLevel}.`
-      );
+        `Bought Upgrade: БОЛЬШАЯ СОСИСКА, Level: ${autoClickerLevel}.`,
+      ));
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Недостаточно чикенбеконов!",
@@ -61,22 +61,22 @@ function loadAutoClicker() {
     var e = autoClickerLevelData[autoClickerLevel - 1].perSecond / 10;
     if (
       ((autoClickerInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clicks = Number(clicks.toFixed(2))),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
-          checkStats();
+          checkStats());
       }, 100)),
       autoClickerLevel >= autoClickerLevelData.length)
     )
-      (autoClickerCard.style.display = "none"),
+      ((autoClickerCard.style.display = "none"),
         (autoClickerSpacer.style.display = "none"),
-        (autoClickerMax = !0);
+        (autoClickerMax = !0));
     else {
       var l = autoClickerLevel + 1,
         c = autoClickerLevelData[autoClickerLevel].price;
-      (autoClickerCardTitle.innerText = "БОЛЬШАЯ СОСИСКА (Уровень " + l + ")"),
-        (autoClickerCardPrice.innerText = "Проебать " + c + " чикенбеконов");
+      ((autoClickerCardTitle.innerText = "БОЛЬШАЯ СОСИСКА (Уровень " + l + ")"),
+        (autoClickerCardPrice.innerText = "Проебать " + c + " чикенбеконов"));
     }
   }
 }

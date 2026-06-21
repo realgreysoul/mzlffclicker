@@ -19,31 +19,31 @@ var clickBombInterval,
   ];
 function buyClickBomb() {
   if (clicks >= clickBombLevelData[clickBombLevel].price) {
-    (clicks -= clickBombLevelData[clickBombLevel].price),
+    ((clicks -= clickBombLevelData[clickBombLevel].price),
       (clickCount.innerText = `Чикенбеконов: ${clicks}`),
-      clearInterval(clickBombInterval);
+      clearInterval(clickBombInterval));
     var e = clickBombLevelData[clickBombLevel].perFiveSeconds;
     if (
       ((clickBombInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
-          checkStats();
+          checkStats());
       }, 5e3)),
       ++clickBombLevel >= clickBombLevelData.length)
     )
-      (clickBombCard.style.display = "none"),
+      ((clickBombCard.style.display = "none"),
         (clickBombSpacer.style.display = "none"),
-        (clickBombMax = !0);
+        (clickBombMax = !0));
     else {
       var c = clickBombLevel + 1,
         l = clickBombLevelData[clickBombLevel].price;
-      (clickBombCardTitle.innerText = "НЕСКВИК (Уровень " + c + ")"),
-        (clickBombCardPrice.innerText = "Проебать " + l + " чикенбеконов");
+      ((clickBombCardTitle.innerText = "НЕСКВИК (Уровень " + c + ")"),
+        (clickBombCardPrice.innerText = "Проебать " + l + " чикенбеконов"));
     }
-    upgradesBought++,
+    (upgradesBought++,
       playSound("NewUpgrade"),
-      console.log(`Bought Upgrade: НЕСКВИК, Level: ${clickBombLevel}.`);
+      console.log(`Bought Upgrade: НЕСКВИК, Level: ${clickBombLevel}.`));
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Недостаточно чикенбеконов!",
@@ -56,22 +56,22 @@ function loadClickBomb() {
     var e = clickBombLevelData[clickBombLevel - 1].perFiveSeconds;
     if (
       ((clickBombInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
           checkStats(),
-          checkCases();
+          checkCases());
       }, 5e3)),
       clickBombLevel >= clickBombLevelData.length)
     )
-      (clickBombCard.style.display = "none"),
+      ((clickBombCard.style.display = "none"),
         (clickBombSpacer.style.display = "none"),
-        (clickBombMax = !0);
+        (clickBombMax = !0));
     else {
       var c = clickBombLevel + 1,
         l = clickBombLevelData[clickBombLevel].price;
-      (clickBombCardTitle.innerText = "НЕСКВИК (Уровень " + c + ")"),
-        (clickBombCardPrice.innerText = "Проебать " + l + " чикенбеконов");
+      ((clickBombCardTitle.innerText = "НЕСКВИК (Уровень " + c + ")"),
+        (clickBombCardPrice.innerText = "Проебать " + l + " чикенбеконов"));
     }
   }
 }

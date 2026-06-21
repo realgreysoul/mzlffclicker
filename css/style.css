@@ -33,17 +33,34 @@
 :after {
   box-sizing: unset !important;
 }
-a#footer {
-  text-decoration: none;
-}
-a:hover#footer {
-  text-decoration: underline;
-}
+a#footer,
 a#warning {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+a#footer::after,
+a#warning::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+a:hover#footer,
 a:hover#warning {
-  text-decoration: underline;
+  color: #c9ad00;
+}
+a:hover#footer::after,
+a:hover#warning::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 .setting {
   padding-top: 10px;
@@ -110,7 +127,7 @@ h5#soundText {
 }
 
 .w3-modal {
-  animation: modalFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: modalFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .w3-modal.modal-exit {
@@ -118,7 +135,7 @@ h5#soundText {
 }
 
 .w3-modal-content {
-  animation: modalZoomIn 0.35s cubic-bezier(0, 0, 0.2, 1);
+  animation: modalZoomIn 0.25s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .w3-modal.modal-exit .w3-modal-content {
@@ -146,22 +163,22 @@ h5#soundText {
 @keyframes modalZoomIn {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(-20px);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: scale(1);
   }
 }
 
 @keyframes modalZoomOut {
   from {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: scale(1);
   }
   to {
     opacity: 0;
-    transform: scale(0.95) translateY(-20px);
+    transform: scale(0.95);
   }
 }
 

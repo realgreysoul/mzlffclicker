@@ -34,18 +34,18 @@ function buyPerClick() {
       reinitializeClickerRipple(),
       ++perClickLevel >= perClickLevelData.length)
     )
-      (perClickCard.style.display = "none"),
+      ((perClickCard.style.display = "none"),
         (perClickSpacer.style.display = "none"),
-        (perClickMax = !0);
+        (perClickMax = !0));
     else {
       var e = perClickLevel + 1,
         l = perClickLevelData[perClickLevel].price;
-      (perClickCardTitle.innerText = "КИРИЕШКИ (Уровень " + e + ")"),
-        (perClickCardPrice.innerText = "Проебать " + l + " чикенбеконов");
+      ((perClickCardTitle.innerText = "КИРИЕШКИ (Уровень " + e + ")"),
+        (perClickCardPrice.innerText = "Проебать " + l + " чикенбеконов"));
     }
-    upgradesBought++,
+    (upgradesBought++,
       playSound("NewUpgrade"),
-      console.log(`Bought Upgrade: КИРИЕШКИ, Level: ${perClickLevel}`);
+      console.log(`Bought Upgrade: КИРИЕШКИ, Level: ${perClickLevel}`));
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Недостаточно чикенбеконов!",
@@ -61,13 +61,13 @@ function loadPerClick() {
       reinitializeClickerRipple(),
       perClickLevel >= perClickLevelData.length)
     )
-      (perClickCard.style.display = "none"),
+      ((perClickCard.style.display = "none"),
         (perClickSpacer.style.display = "none"),
-        (perClickMax = !0);
+        (perClickMax = !0));
     else {
       var e = perClickLevel + 1,
         l = perClickLevelData[perClickLevel].price;
-      (perClickCardTitle.innerText = "КИРИЕШКИ (Уровень " + e + ")"),
-        (perClickCardPrice.innerText = "Проебать " + l + " чикенбекоинов");
+      ((perClickCardTitle.innerText = "КИРИЕШКИ (Уровень " + e + ")"),
+        (perClickCardPrice.innerText = "Проебать " + l + " чикенбекоинов"));
     }
 }

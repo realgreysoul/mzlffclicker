@@ -19,32 +19,32 @@ var clickFactoryInterval,
   ];
 function buyClickFactory() {
   if (clicks >= clickFactoryLevelData[clickFactoryLevel].price) {
-    (clicks -= clickFactoryLevelData[clickFactoryLevel].price),
+    ((clicks -= clickFactoryLevelData[clickFactoryLevel].price),
       (clickCount.innerText = `Чикенбеконов: ${clicks}`),
-      clearInterval(clickFactoryInterval);
+      clearInterval(clickFactoryInterval));
     var e = clickFactoryLevelData[clickFactoryLevel].perTwentySeconds;
     if (
       ((clickFactoryInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
           checkStats(),
-          checkCases();
+          checkCases());
       }, 2e4)),
       ++clickFactoryLevel >= clickFactoryLevelData.length)
     )
-      (clickFactoryCard.style.display = "none"),
+      ((clickFactoryCard.style.display = "none"),
         (clickFactorySpacer.style.display = "none"),
-        (clickFactoryMax = !0);
+        (clickFactoryMax = !0));
     else {
       var c = clickFactoryLevel + 1,
         l = clickFactoryLevelData[clickFactoryLevel].price;
-      (clickFactoryCardTitle.innerText = "КИШ-МИШ (Уровень " + c + ")"),
-        (clickFactoryCardPrice.innerText = "Проебать " + l + " чикенбеконов");
+      ((clickFactoryCardTitle.innerText = "КИШ-МИШ (Уровень " + c + ")"),
+        (clickFactoryCardPrice.innerText = "Проебать " + l + " чикенбеконов"));
     }
-    upgradesBought++,
+    (upgradesBought++,
       playSound("NewUpgrade"),
-      console.log(`Bought Upgrade: КИШ-МИШ, Level: ${clickFactoryLevel}.`);
+      console.log(`Bought Upgrade: КИШ-МИШ, Level: ${clickFactoryLevel}.`));
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Недостаточно чикенбеконов!",
@@ -57,21 +57,21 @@ function loadClickFactory() {
     var e = clickFactoryLevelData[clickFactoryLevel - 1].perTwentySeconds;
     if (
       ((clickFactoryInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
-          checkStats();
+          checkStats());
       }, 2e4)),
       clickFactoryLevel >= clickFactoryLevelData.length)
     )
-      (clickFactoryCard.style.display = "none"),
+      ((clickFactoryCard.style.display = "none"),
         (clickFactorySpacer.style.display = "none"),
-        (clickFactoryMax = !0);
+        (clickFactoryMax = !0));
     else {
       var c = clickFactoryLevel + 1,
         l = clickFactoryLevelData[clickFactoryLevel].price;
-      (clickFactoryCardTitle.innerText = "КИШ-МИШ (Уровень " + c + ")"),
-        (clickFactoryCardPrice.innerText = "Проебать " + l + " чикенбеконов");
+      ((clickFactoryCardTitle.innerText = "КИШ-МИШ (Уровень " + c + ")"),
+        (clickFactoryCardPrice.innerText = "Проебать " + l + " чикенбеконов"));
     }
   }
 }

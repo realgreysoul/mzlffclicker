@@ -4,10 +4,10 @@ var clickCount = document.getElementById("clickCount"),
   clickSound = "Default",
   unlockedClickSounds = ["Default"];
 document.getElementById("clicker").addEventListener("click", function () {
-  (clicks += perClick),
+  ((clicks += perClick),
     (clickCount.innerText = `Чикенбеконов: ${clicks}`),
     totalClicks++,
     checkStats(),
     checkCases(),
-    playSound(clickSound);
+    playSound(clickSound));
 });

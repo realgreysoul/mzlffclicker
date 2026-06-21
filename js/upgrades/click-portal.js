@@ -14,32 +14,32 @@ var clickPortalInterval,
   ];
 function buyClickPortal() {
   if (clicks >= clickPortalLevelData[clickPortalLevel].price) {
-    (clicks -= clickPortalLevelData[clickPortalLevel].price),
+    ((clicks -= clickPortalLevelData[clickPortalLevel].price),
       (clickCount.innerText = `Чикенбеконов: ${clicks}`),
-      clearInterval(clickPortalInterval);
+      clearInterval(clickPortalInterval));
     var e = clickPortalLevelData[clickPortalLevel].perThirtySeconds;
     if (
       ((clickPortalInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
           checkStats(),
-          checkCases();
+          checkCases());
       }, 2e4)),
       ++clickPortalLevel >= clickPortalLevelData.length)
     )
-      (clickPortalCard.style.display = "none"),
+      ((clickPortalCard.style.display = "none"),
         (clickPortalSpacer.style.display = "none"),
-        (clickPortalMax = !0);
+        (clickPortalMax = !0));
     else {
       var l = clickPortalLevel + 1,
         c = clickPortalLevelData[clickPortalLevel].price;
-      (clickPortalCardTitle.innerText = "МАЗЕЛЛОВ (Уровень " + l + ")"),
-        (clickPortalCardPrice.innerText = "Проебать " + c + " чикенбеконов");
+      ((clickPortalCardTitle.innerText = "МАЗЕЛЛОВ (Уровень " + l + ")"),
+        (clickPortalCardPrice.innerText = "Проебать " + c + " чикенбеконов"));
     }
-    upgradesBought++,
+    (upgradesBought++,
       playSound("NewUpgrade"),
-      console.log(`Bought Upgrade: МАЗЕЛЛОВ, Level: ${clickPortalLevel}.`);
+      console.log(`Bought Upgrade: МАЗЕЛЛОВ, Level: ${clickPortalLevel}.`));
   } else {
     snackbar.MaterialSnackbar.showSnackbar({
       message: "Недостаточно чикенбеконов!",
@@ -52,21 +52,21 @@ function loadClickPortal() {
     var e = clickPortalLevelData[clickPortalLevel - 1].perThirtySeconds;
     if (
       ((clickPortalInterval = setInterval(function () {
-        (clicks += e),
+        ((clicks += e),
           (clickCount.innerText = `Чикенбеконов: ${clicks}`),
           checkCases(),
-          checkStats();
+          checkStats());
       }, 2e4)),
       clickPortalLevel >= clickPortalLevelData.length)
     )
-      (clickPortalCard.style.display = "none"),
+      ((clickPortalCard.style.display = "none"),
         (clickPortalSpacer.style.display = "none"),
-        (clickPortalMax = !0);
+        (clickPortalMax = !0));
     else {
       var l = clickPortalLevel + 1,
         c = clickPortalLevelData[clickPortalLevel].price;
-      (clickPortalCardTitle.innerText = "МАЗЕЛЛОВ (Уровень " + l + ")"),
-        (clickPortalCardPrice.innerText = "Проебать " + c + " чикенбеконов");
+      ((clickPortalCardTitle.innerText = "МАЗЕЛЛОВ (Уровень " + l + ")"),
+        (clickPortalCardPrice.innerText = "Проебать " + c + " чикенбеконов"));
     }
   }
 }
