@@ -236,7 +236,7 @@ p {
   margin: 20px 0 16px;
 }
 a {
-  color: #8a6c00;
+  color: rgb(0 52 243);
   font-weight: 500;
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }

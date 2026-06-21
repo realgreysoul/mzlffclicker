@@ -69,10 +69,10 @@ function loadGame() {
 function loadMobileSoundsSetting() {
   if (void 0 === localStorage.mobileSoundsEnabled) return;
   var enabled = "true" === localStorage.mobileSoundsEnabled,
-    checkbox = document.getElementById("mobileSoundsCheckbox");
-  checkbox.MaterialCheckbox
-    ? checkbox.MaterialCheckbox[enabled ? "check" : "uncheck"]()
-    : (checkbox.checked = enabled);
+    checkboxInput = document.getElementById("mobileSoundsCheckbox"),
+    checkboxLabel = document.getElementById("mobileSounds");
+  checkboxInput.checked = enabled;
+  checkboxLabel && checkboxLabel.classList.toggle("is-checked", enabled);
 }
 function deleteSave() {
   showModal(deleteSaveDialog);

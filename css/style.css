@@ -53,10 +53,6 @@ a#warning::after {
   transform-origin: right;
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
-a:hover#footer,
-a:hover#warning {
-  color: #c9ad00;
-}
 a:hover#footer::after,
 a:hover#warning::after {
   transform: scaleX(1);
