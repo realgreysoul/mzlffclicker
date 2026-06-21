@@ -61,7 +61,10 @@ function playSound(e) {
       var a = { message: `Звук "${e}" не найден!`, timeout: 2e3 };
       return void snackbar.MaterialSnackbar.showSnackbar(a);
     }
-    cached.cloneNode(!0).play();
+    try {
+      cached.currentTime = 0;
+    } catch (err) {}
+    cached.play();
   }
 }
 function soundIdify(e) {
