@@ -23,40 +23,39 @@ async function openSoundCase() {
   showModal(caseDialog);
   var e = document.getElementsByClassName("soundCaseCard"),
     n = document.getElementsByClassName("soundCaseSpacer");
-  e[0].remove(), n[0].remove();
+  (e[0].remove(), n[0].remove());
   var a = casesInventory.indexOf("Рандомный звук");
-  -1 !== a && casesInventory.splice(a, 1), caseUpdate();
-  
-  theItem.classList.add("case-rolling");
-  
+  (-1 !== a && casesInventory.splice(a, 1), caseUpdate());
+
+  theItem.classList.remove("case-opening", "case-text-enter", "case-text-exit");
+  theItem.innerHTML = "";
+
   for (var s = 100; s <= 500; s += 10) {
     await delay(s);
     var o = soundUnIdify(getSoundCaseResult());
-    theItem.innerHTML = o;
-    applyCaseSlideAnimation();
     if (500 !== s) {
+      cycleCaseText(o);
       playSound("CaseRolling");
     } else {
+      await cycleCaseText(o);
+
       -1 === unlockedClickSounds.indexOf(soundIdify(o)) &&
         unlockedClickSounds.push(soundIdify(o));
-      
-      theItem.classList.remove("case-rolling");
+
       theItem.classList.add("case-opening");
-      
-      (youGot.style.display = "block"),
-        (caseOkay.style.display = "inline-block");
-      
+
+      ((youGot.style.display = "block"),
+        (caseOkay.style.display = "inline-block"));
+
       caseOkay.onclick = function () {
-        (youGot.style.display = "none"),
+        ((youGot.style.display = "none"),
           (theItem.innerHTML = ""),
-          (caseOkay.style.display = "none");
+          (caseOkay.style.display = "none"));
         theItem.classList.remove("case-opening");
         closeModal(caseDialog);
       };
-      
-      casesOpened++,
-        console.log(`Got Sound: ${o}`),
-        playSound("CaseOpening");
+
+      (casesOpened++, console.log(`Got Sound: ${o}`), playSound("CaseOpening"));
     }
   }
 }

@@ -24,40 +24,39 @@ async function openClickCase() {
   showModal(caseDialog);
   var e = document.getElementsByClassName("clickCaseCard"),
     s = document.getElementsByClassName("clickCaseSpacer");
-  e[0].remove(), s[0].remove();
+  (e[0].remove(), s[0].remove());
   var a = casesInventory.indexOf("Рандомные чикенбеконы");
-  -1 !== a && casesInventory.splice(a, 1), caseUpdate();
-  
-  theItem.classList.add("case-rolling");
-  
+  (-1 !== a && casesInventory.splice(a, 1), caseUpdate());
+
+  theItem.classList.remove("case-opening", "case-text-enter", "case-text-exit");
+  theItem.innerHTML = "";
+
   for (var n = 100; n <= 500; n += 10) {
     await delay(n);
     var l = getClickCaseResult();
-    theItem.innerHTML = l;
-    applyCaseSlideAnimation();
-    if (500 !== n) playSound("CaseRolling");
-    else {
-      theItem.classList.remove("case-rolling");
+    if (500 !== n) {
+      cycleCaseText(l);
+      playSound("CaseRolling");
+    } else {
+      await cycleCaseText(l);
       theItem.classList.add("case-opening");
-      
-      (youGot.style.display = "block"),
-        (caseOkay.style.display = "inline-block");
-      
-      var oldListener = caseOkay.onclick;
+
+      ((youGot.style.display = "block"),
+        (caseOkay.style.display = "inline-block"));
+
       caseOkay.onclick = function () {
-        (youGot.style.display = "none"),
+        ((youGot.style.display = "none"),
           (theItem.innerHTML = ""),
-          (caseOkay.style.display = "none");
+          (caseOkay.style.display = "none"));
         theItem.classList.remove("case-opening");
         closeModal(caseDialog);
       };
-      
-      casesOpened++,
-        console.log(`Got Clicks: ${l}`);
+
+      (casesOpened++, console.log(`Got Clicks: ${l}`));
       var c = parseInt(l);
-      (clicks += c),
+      ((clicks += c),
         (clickCount.innerText = `Чикенбеконов: ${clicks}`),
-        playSound("CaseOpening");
+        playSound("CaseOpening"));
     }
   }
 }

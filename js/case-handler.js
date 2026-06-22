@@ -24,14 +24,28 @@ var caseDialog = document.getElementById("caseDialog"),
     { clicks: 32e3, got: !1 },
   ],
   casesInventory = [];
+
+function cycleCaseText(text) {
+  return new Promise(function (resolve) {
+    theItem.classList.remove("case-text-enter");
+    theItem.classList.add("case-text-exit");
+    setTimeout(function () {
+      theItem.innerHTML = text;
+      theItem.classList.remove("case-text-exit");
+      void theItem.offsetWidth;
+      theItem.classList.add("case-text-enter");
+      resolve();
+    }, 90);
+  });
+}
 function checkCases() {
   for (x in caseData)
     if (clicks >= caseData[x].clicks && !caseData[x].got) {
       var e = cases[generateNumberBetween(0, cases.length - 1)];
-      (caseData[x].got = !0),
+      ((caseData[x].got = !0),
         casesInventory.push(e),
         console.log(`Got Case: ${e}`),
-        playSound("NewCase");
+        playSound("NewCase"));
       var a = { message: `Вы получили наёбку "${e}"`, timeout: 3e3 };
       return (
         snackbar.MaterialSnackbar.showSnackbar(a),
@@ -79,7 +93,7 @@ function showCase(e, a) {
       "mdl-shadow--2dp",
       "mdl-cell",
       "mdl-cell--3-col-desktop",
-      "mdl-cell--4-col-tablet"
+      "mdl-cell--4-col-tablet",
     ),
     (c.id = `${a}CardImage`),
     c.classList.add("mdl-card__title"),
@@ -97,12 +111,12 @@ function showCase(e, a) {
       var l = { message: `Наёбка "${theCase}" не найдена!`, timeout: 2e3 };
       snackbar.MaterialSnackbar.showSnackbar(l);
   }
-  d.classList.add("mdl-card__actions", "mdl-card--border"),
+  (d.classList.add("mdl-card__actions", "mdl-card--border"),
     i.classList.add(
       "mdl-button",
       "mdl-button--colored",
       "mdl-js-button",
-      "mdl-js-ripple-effect"
+      "mdl-js-ripple-effect",
     ),
     (i.innerText = "Открыть наёбку"),
     i.addEventListener("click", function () {
@@ -126,7 +140,7 @@ function showCase(e, a) {
     d.append(i),
     s.append(d),
     caseList.append(s),
-    caseList.append(r);
+    caseList.append(r));
 }
 function loadCases() {
   for (x in (console.log("Loading cases..."), casesInventory))
@@ -138,7 +152,7 @@ function loadCases() {
         showCase(
           "Рандомные чикенбеконы",
           "clickCase",
-          clickCaseCardDescription
+          clickCaseCardDescription,
         );
         break;
       default:

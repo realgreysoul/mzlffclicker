@@ -179,31 +179,11 @@ h5#soundText {
 }
 
 #theItem {
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: inline-block;
-}
-
-#theItem.case-rolling {
-  animation: casePulse 0.12s ease-in-out;
 }
 
 #theItem.case-opening {
   animation: caseOpening 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes casePulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2) rotate(3deg);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 @keyframes caseOpening {
@@ -227,12 +207,31 @@ h5#soundText {
   }
 }
 
-@keyframes caseSlideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
+#theItem.case-text-exit {
+  animation: caseTextExit 0.09s ease-in forwards;
+}
+
+#theItem.case-text-enter {
+  animation: caseTextEnter 0.13s ease-out forwards;
+}
+
+@keyframes caseTextExit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
   }
-  100% {
+  to {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+}
+
+@keyframes caseTextEnter {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
     opacity: 1;
     transform: translateX(0);
   }
