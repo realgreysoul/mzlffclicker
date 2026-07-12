@@ -89,6 +89,23 @@ h5#soundText {
 .footer {
   color: #606060;
 }
+.ageBadge {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition:
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: help;
+}
+.age-badge:hover {
+  color: #404040;
+}
 #perClickCardImage {
   background: url(https://images.ctfassets.net/1pxughrhgws1/N8j7abmg2AAMnwluRqOxj/5ed4b971d6bba6bf726b3f1f94df02cb/per-click.png?w=375&q=0&fm=avif)
     center / cover;
