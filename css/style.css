@@ -103,7 +103,7 @@ h5#soundText {
     border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: help;
 }
-.age-badge:hover {
+.ageBadge:hover {
   color: #404040;
 }
 #perClickCardImage {
