@@ -69,6 +69,15 @@ a:hover#warning::after {
   text-align: center;
   padding-bottom: 10px;
   padding-top: 22px;
+  transition: filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html.warning-pending #game {
+  filter: blur(50px);
+  pointer-events: none;
+  user-select: none;
+}
+html.warning-pending #warningDialog {
+  display: block;
 }
 #clicker {
   padding: 50px;

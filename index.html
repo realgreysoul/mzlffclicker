@@ -4,6 +4,11 @@
 <head>
   <title>MZLFF Clicker</title>
   <meta charset="UTF-8" />
+  <script>
+    if (!localStorage.getItem("warningAccepted")) {
+      document.documentElement.classList.add("warning-pending");
+    }
+  </script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Игра про человека с кодовым именем mrEblan" />
   <meta property="og:site_name" content="MZLFF Clicker" />
@@ -302,7 +307,7 @@
           target="_blank"><b>Greysoul</b></a>
       </p>
       <p>
-        <span class="ageBadge" title="Содержит ненормативную лексику и грубый юмор">18+</span>
+        <span class="ageBadge" title="Содержит нецензурную лексику и грубый юмор">18+</span>
       </p>
     </div>
     <div id="caseDialog" class="w3-modal">
@@ -386,23 +391,27 @@
       <button class="mdl-snackbar__action" type="button"></button>
     </div>
   </div>
-  <div id="warningDialog" class="w3-modal" style="display: none">
+  <div id="warningDialog" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <h3>Внимание!</h3>
         <p>
-          Сайт создан в
+          Сайт был создан в
           <a id="warning" data-umami-event="warning-clicker-2021-twitch-clip"
             href="https://www.twitch.tv/mazellovvv/clip/SuspiciousCredulousKumquatBrainSlug-15xJuJpYnXopD8tp"
-            target="_blank"><b>сентябре 2021 года</b></a>
-          и содержит мемы того времени, ненормативную лексику и грубый юмор (18+). Он практически не менялся, лишь
-          незначительно исправлялся. Автор осознаёт, что мемы устарели, но
-          сохраняет их как часть истории.
+            target="_blank"><b>сентябре 2021 года</b></a> и содержит мемы, которые сейчас считаются кринжовыми и
+          устаревшими. Да, это так, но с тех пор сайт никак кардинально не менялся, поэтому было решено ничего не
+          менять. В связи с этим сайт сохранил обильное наличие мата и грубого юмора, так что скажите, пожалуйста: <b>вы
+            совершеннолетний?</b>
         </p>
         <br />
-        <button id="warningOkay"
+        <button id="warningYes"
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
-          Понятно
+          Да
+        </button>
+        <button id="warningNo"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
+          Нет
         </button>
       </div>
     </div>
