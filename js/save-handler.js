@@ -82,8 +82,11 @@ document.getElementById("yesDelete").addEventListener("click", function () {
   (console.log("Deleting save..."),
     localStorage.clear(),
     (saveOnReload = !1),
-    console.log("Save deleted, reloading..."),
-    location.reload());
+    console.log("Save deleted, reloading..."));
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  location.reload();
 });
 
 document.getElementById("noDelete").addEventListener("click", function () {

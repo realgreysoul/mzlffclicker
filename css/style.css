@@ -79,6 +79,10 @@ html.warning-pending #game {
 html.warning-pending #warningDialog {
   display: block;
 }
+html.warning-pending,
+html.warning-pending body {
+  overflow: hidden;
+}
 #clicker {
   padding: 50px;
   line-height: 0;
