@@ -83,6 +83,7 @@ document.getElementById("yesDelete").addEventListener("click", function () {
     localStorage.clear(),
     (saveOnReload = !1),
     console.log("Save deleted, reloading..."));
+  sessionStorage.setItem("scrollTopOnLoad", "1");
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }

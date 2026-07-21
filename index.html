@@ -8,6 +8,18 @@
     if (!localStorage.getItem("warningAccepted")) {
       document.documentElement.classList.add("warning-pending");
     }
+    if (sessionStorage.getItem("scrollTopOnLoad")) {
+      sessionStorage.removeItem("scrollTopOnLoad");
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+      window.addEventListener("load", function () {
+        window.scrollTo(0, 0);
+      });
+    } else if ("scrollRestoration" in history) {
+      history.scrollRestoration = "auto";
+    }
   </script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Игра про человека с кодовым именем mrEblan" />
