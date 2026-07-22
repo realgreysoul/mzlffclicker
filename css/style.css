@@ -83,6 +83,21 @@ html.warning-pending,
 html.warning-pending body {
   overflow: hidden;
 }
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 420px;
+  aspect-ratio: 319.31 / 56.25;
+  background-image: url("/images/logo.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+@media (max-width: 455px) {
+  .logo {
+    width: 95%;
+  }
+}
 #clicker {
   padding: 50px;
   line-height: 0;
