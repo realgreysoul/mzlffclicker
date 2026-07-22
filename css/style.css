@@ -1,33 +1,3 @@
-@media screen and (max-width: 3000px) {
-  #mobileSounds {
-    display: none;
-  }
-}
-@media only screen and (max-width: 455px) {
-  svg {
-    width: 95%;
-  }
-  .footer {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  h6#description {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-#clickSounds {
-  margin-bottom: 20px;
-}
-@media only screen and (max-width: 818px) {
-  #mobileSounds {
-    display: inline;
-  }
-  .footer {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
 *,
 :before,
 :after {
@@ -92,11 +62,6 @@ html.warning-pending body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
-}
-@media (max-width: 455px) {
-  .logo {
-    width: 95%;
-  }
 }
 #clicker {
   padding: 50px;
@@ -279,5 +244,36 @@ h5#soundText {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  #mobileSounds {
+    display: none;
+  }
+}
+@media only screen and (max-width: 455px) {
+  .logo {
+    width: 95%;
+  }
+  .footer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  h6#description {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+#clickSounds {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 818px) {
+  #mobileSounds {
+    display: inline;
+  }
+  .footer {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
