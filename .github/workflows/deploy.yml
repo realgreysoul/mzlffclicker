@@ -29,6 +29,7 @@ jobs:
             ! -name "*.js" \
             ! -name "*.png" \
             ! -name "*.jpg" \
+            ! -name "*.svg" \
             -delete
           find . -not -path './.git/*' -empty -type d -delete
       - name: Setup Pages
