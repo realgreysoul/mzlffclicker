@@ -22,7 +22,6 @@ jobs:
       - name: Filter files
         run: |
           find . -not -path './.git/*' -type f \
-            ! -name "*.woff2" \
             ! -name "*.html" \
             ! -name "*.ico" \
             ! -name "*.css" \
