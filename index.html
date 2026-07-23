@@ -1,361 +1,471 @@
 ﻿<!DOCTYPE html>
 <html lang="ru-RU">
-
-<head>
-  <title>MZLFF Clicker</title>
-  <meta charset="UTF-8" />
-  <script>
-    if (!localStorage.getItem("warningAccepted")) {
-      document.documentElement.classList.add("warning-pending");
-    }
-    if (sessionStorage.getItem("scrollTopOnLoad")) {
-      sessionStorage.removeItem("scrollTopOnLoad");
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
+  <head>
+    <title>MZLFF Clicker</title>
+    <meta charset="UTF-8" />
+    <script>
+      if (!localStorage.getItem("warningAccepted")) {
+        document.documentElement.classList.add("warning-pending");
       }
-      window.scrollTo(0, 0);
-      window.addEventListener("load", function () {
+      if (sessionStorage.getItem("scrollTopOnLoad")) {
+        sessionStorage.removeItem("scrollTopOnLoad");
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
         window.scrollTo(0, 0);
-      });
-    } else if ("scrollRestoration" in history) {
-      history.scrollRestoration = "auto";
-    }
-  </script>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Игра про человека с кодовым именем mrEblan" />
-  <meta property="og:site_name" content="MZLFF Clicker" />
-  <meta property="og:title" content="MZLFF Clicker">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Игра про человека с кодовым именем mrEblan">
-  <meta property="og:image" content="https://mzlffclicker.greysoul.ru/images/seo.jpg">
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="627" />
-  <meta property="og:url" content="https://mzlffclicker.greysoul.ru">
-  <meta property="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://mzlffclicker.greysoul.ru" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="https://mzlffclicker.greysoul.ru/images/apple-touch-icon.png" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/material.css" />
-  <link rel="stylesheet" href="css/w3.css" />
-  <link rel="stylesheet" href="css/material-icons.css" />
-  <link rel="stylesheet" href="css/material.light_blue-indigo.css" />
-  <link rel="preconnect" href="//images.ctfassets.net" />
-  <link rel="dns-prefetch" href="//images.ctfassets.net" />
-  <link rel="preconnect" href="//assets.ctfassets.net" />
-  <link rel="dns-prefetch" href="//assets.ctfassets.net" />
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="d249ea86-790d-4ee2-81ac-4fe5bd0461ff">
-  </script>
-</head>
+        window.addEventListener("load", function () {
+          window.scrollTo(0, 0);
+        });
+      } else if ("scrollRestoration" in history) {
+        history.scrollRestoration = "auto";
+      }
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Игра про человека с кодовым именем mrEblan"
+    />
+    <meta property="og:site_name" content="MZLFF Clicker" />
+    <meta property="og:title" content="MZLFF Clicker" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Игра про человека с кодовым именем mrEblan"
+    />
+    <meta
+      property="og:image"
+      content="https://mzlffclicker.greysoul.ru/images/seo.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:url" content="https://mzlffclicker.greysoul.ru" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://mzlffclicker.greysoul.ru" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      href="https://mzlffclicker.greysoul.ru/images/apple-touch-icon.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/w3.css" />
+    <link rel="stylesheet" href="css/material.css" />
+    <link rel="preconnect" href="//images.ctfassets.net" />
+    <link rel="dns-prefetch" href="//images.ctfassets.net" />
+    <link rel="preconnect" href="//assets.ctfassets.net" />
+    <link rel="dns-prefetch" href="//assets.ctfassets.net" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="d249ea86-790d-4ee2-81ac-4fe5bd0461ff"
+    ></script>
+  </head>
 
-<body>
-  <div id="game">
-    <div class="logo" role="img" aria-label="MZLFF Clicker's Logo"></div>
-    <h6 id="description">
-      Мемориальные мероприятия, шутки про мать и прочий ржач вы найдёте здесь.
-    </h6>
-    <h6 id="description">
-      Трахайте кнопку, улучшайте уровень различных выебонов и крутите наёбки,
-      всё в ваших руках!
-    </h6>
-    <hr />
-    <h3 id="clickCount">Чикенбеконов: 0</h3>
-    <button id="clicker"
-      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--red-600">
-      ТРАХНУТЬ (+1)
-    </button>
-    <br /><br />
-    <hr />
-    <div id="shop">
-      <h3>Магазин выебонов</h3>
-      <h5 id="allMaxed" style="display: none">
-        Вы прокачали свои выебоны на 100%!
-      </h5>
-      <div class="mdl-grid">
-        <div class="mdl-layout-spacer"></div>
-        <div id="perClickCard"
-          class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
-          <div id="perClickCardImage" class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <h3 id="perClickCardTitle">КИРИЕШКИ (Уровень 1)</h3>
-            <p>
-              "КИРИЕШКИ" увеличивают количество чикенбеконов, которые вы
-              получаете за один клик.
-            </p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a id="perClickCardPrice" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              onclick="buy('perClick')">Проебать 50 чикенбеконов</a>
-          </div>
-        </div>
-        <div id="perClickSpacer" class="mdl-layout-spacer"></div>
-        <div id="clickBombCard"
-          class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
-          <div id="clickBombCardImage" class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <h3 id="clickBombCardTitle">НЕСКВИК (Уровень 1)</h3>
-            <p>
-              "НЕСКВИК" способен взрываться и издавать вспышку чикенбеконов
-              каждые пять секунд.
-            </p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a id="clickBombCardPrice" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              onclick="buy('clickBomb')">Проебать 100 чикенбеконов</a>
-          </div>
-        </div>
-        <div id="clickBombSpacer" class="mdl-layout-spacer"></div>
-        <div id="clickFactoryCard"
-          class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
-          <div id="clickFactoryCardImage" class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <h3 id="clickFactoryCardTitle">КИШ-МИШ (Уровень 1)</h3>
-            <p>
-              Завод "КИШ-МИШ" издает большой всплеск чикенбеконов каждые 20
-              секунд.
-            </p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a id="clickFactoryCardPrice" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              onclick="buy('clickFactory')">Проебать 1000 чикенбеконов</a>
-          </div>
-        </div>
-        <div id="clickFactorySpacer" class="mdl-layout-spacer"></div>
-        <div id="clickMinerCard"
-          class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
-          <div id="clickMinerCardImage" class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <h3 id="clickMinerCardTitle">БАТОН (Уровень 1)</h3>
-            <p>
-              "БАТОН" чудесным образом дает случайное количество чикенбеконов
-              между определенным максимальным и минимальным количеством кликов
-              каждые десять секунд.
-            </p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a id="clickMinerCardPrice" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              onclick="buy('clickMiner')">Проебать 1000 чикенбеконов</a>
-          </div>
-        </div>
-        <div id="clickMinerSpacer" class="mdl-layout-spacer"></div>
-        <div id="autoClickerCard"
-          class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet">
-          <div id="autoClickerCardImage" class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <h3 id="autoClickerCardTitle">БОЛЬШАЯ СОСИСКА (Уровень 1)</h3>
-            <p>
-              "БОЛЬШАЯ СОСИСКА" издаёт свою мощь, производя постоянный поток
-              чикенбеконов, который никогда не прекратится!
-            </p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a id="autoClickerCardPrice" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              onclick="buy('autoClicker')">Проебать 2500 чикенбеконов</a>
-          </div>
-        </div>
-        <div id="autoClickerSpacer" class="mdl-layout-spacer"></div>
-        <div id="clickPortalCard"
-          class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet">
-          <div id="clickPortalCardImage" class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <h3 id="clickPortalCardTitle">МАЗЕЛЛОВ (Уровень 1)</h3>
-            <p>
-              Магическая упаковка, которая каким-то образом дает вам
-              чикенбеконы.
-            </p>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a id="clickPortalCardPrice" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-              onclick="buy('clickPortal')">Проебать 5000 чикенбеконов</a>
-          </div>
-        </div>
-        <div id="clickPortalSpacer" class="mdl-layout-spacer"></div>
-      </div>
-    </div>
-    <div id="cases">
-      <h3>Наёбки</h3>
-      <h5 id="noCases">Пока что у вас нет никаких наёбок :(</h5>
-      <div id="caseList" class="mdl-grid">
-        <div class="mdl-layout-spacer"></div>
-      </div>
-    </div>
-    <hr />
-    <span>
+  <body>
+    <div id="game">
+      <div class="logo" role="img" aria-label="MZLFF Clicker's Logo"></div>
+      <h6 id="description">
+        Мемориальные мероприятия, шутки про мать и прочий ржач вы найдёте здесь.
+      </h6>
+      <h6 id="description">
+        Трахайте кнопку, улучшайте уровень различных выебонов и крутите наёбки,
+        всё в ваших руках!
+      </h6>
+      <hr />
+      <h3 id="clickCount">Чикенбеконов: 0</h3>
       <button
-        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
-        onclick="showStats()">
-        Статистика
-      </button>
-      <button
-        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
-        onclick="showSettings()">
-        Настройки
+        id="clicker"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--red-600"
+      >
+        ТРАХНУТЬ (+1)
       </button>
       <br /><br />
-      <button
-        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--yellow mdl-color-text--black"
-        onclick="saveGame()">
-        Сохранить
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--red-600"
-        onclick="deleteSave()">
-        Сбросить
-      </button>
-    </span>
-    <hr />
-    <div class="footer">
-      <p>
-        The original clicker project was created by
-        <a id="footer" data-umami-event="hunter-parcells" href="https://github.com/hparcells" target="_blank"><b>Hunter
-            Parcells</b></a>
-      </p>
-      <p>
-        Адаптировано под русский язык и отредактировано под стримера
-        <a id="footer" data-umami-event="mazellovvv" href="https://www.twitch.tv/mazellovvv"
-          target="_blank"><b>mazellovvv</b></a>
-        ещё каким-то челом под ником
-        <a id="footer" data-umami-event="greysouls-twitch-channel-in-footer" href="https://www.twitch.tv/realgreysoul"
-          target="_blank"><b>RealGreysoul</b></a>
-      </p>
-      <p>
-        ©
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        <a id="footer" data-umami-event="greysoul-in-copyright" href="https://greysoul.ru"
-          target="_blank"><b>Greysoul</b></a>
-      </p>
-      <p>
-        <span class="ageBadge" title="Содержит нецензурную лексику и грубый юмор">18+</span>
-      </p>
-    </div>
-    <div id="caseDialog" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <h3 id="openingCaseTitle">Производится открытие наёбки</h3>
-          <h5 id="youGot" style="display: none">Вы получили по ебалу:</h5>
-          <p id="theItem"></p>
-          <br />
-          <button id="caseOkay"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
-            style="display: none">
-            Хуйня какая-то выпала...
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="statsDialog" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <h3>Статистика</h3>
-          <p id="highestClicks"></p>
-          <p id="totalClicks"></p>
-          <p id="upgradesBought"></p>
-          <p id="casesOpened"></p>
-          <br />
-          <button id="statsOkay"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
-            Могло быть и лучше...
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="settingsDialog" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <h3>Настройки</h3>
-          <div class="setting">
-            <h5 id="soundText">Текущий звук при нажатии на кнопку</h5>
-            <br />
-            <select id="clickSounds" class="w3-select"></select>
-            <br />
-            <label id="mobileSounds" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
-              for="mobileSoundsCheckbox">
-              <input type="checkbox" id="mobileSoundsCheckbox" class="mdl-checkbox__input" checked />
-              <span class="mdl-checkbox__label">Включить звуки в мобильных браузерах</span>
-            </label>
+      <hr />
+      <div id="shop">
+        <h3>Магазин выебонов</h3>
+        <h5 id="allMaxed" style="display: none">
+          Вы прокачали свои выебоны на 100%!
+        </h5>
+        <div class="mdl-grid">
+          <div class="mdl-layout-spacer"></div>
+          <div
+            id="perClickCard"
+            class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet"
+          >
+            <div id="perClickCardImage" class="mdl-card__title"></div>
+            <div class="mdl-card__supporting-text">
+              <h3 id="perClickCardTitle">КИРИЕШКИ (Уровень 1)</h3>
+              <p>
+                "КИРИЕШКИ" увеличивают количество чикенбеконов, которые вы
+                получаете за один клик.
+              </p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a
+                id="perClickCardPrice"
+                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onclick="buy('perClick')"
+                >Проебать 50 чикенбеконов</a
+              >
+            </div>
           </div>
-          <br />
-          <button id="settingsSave"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
-            Сохранить
-          </button>
-          <button id="settingsClose"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
-            Не сохранять
-          </button>
+          <div id="perClickSpacer" class="mdl-layout-spacer"></div>
+          <div
+            id="clickBombCard"
+            class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet"
+          >
+            <div id="clickBombCardImage" class="mdl-card__title"></div>
+            <div class="mdl-card__supporting-text">
+              <h3 id="clickBombCardTitle">НЕСКВИК (Уровень 1)</h3>
+              <p>
+                "НЕСКВИК" способен взрываться и издавать вспышку чикенбеконов
+                каждые пять секунд.
+              </p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a
+                id="clickBombCardPrice"
+                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onclick="buy('clickBomb')"
+                >Проебать 100 чикенбеконов</a
+              >
+            </div>
+          </div>
+          <div id="clickBombSpacer" class="mdl-layout-spacer"></div>
+          <div
+            id="clickFactoryCard"
+            class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet"
+          >
+            <div id="clickFactoryCardImage" class="mdl-card__title"></div>
+            <div class="mdl-card__supporting-text">
+              <h3 id="clickFactoryCardTitle">КИШ-МИШ (Уровень 1)</h3>
+              <p>
+                Завод "КИШ-МИШ" издает большой всплеск чикенбеконов каждые 20
+                секунд.
+              </p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a
+                id="clickFactoryCardPrice"
+                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onclick="buy('clickFactory')"
+                >Проебать 1000 чикенбеконов</a
+              >
+            </div>
+          </div>
+          <div id="clickFactorySpacer" class="mdl-layout-spacer"></div>
+          <div
+            id="clickMinerCard"
+            class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet"
+          >
+            <div id="clickMinerCardImage" class="mdl-card__title"></div>
+            <div class="mdl-card__supporting-text">
+              <h3 id="clickMinerCardTitle">БАТОН (Уровень 1)</h3>
+              <p>
+                "БАТОН" чудесным образом дает случайное количество чикенбеконов
+                между определенным максимальным и минимальным количеством кликов
+                каждые десять секунд.
+              </p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a
+                id="clickMinerCardPrice"
+                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onclick="buy('clickMiner')"
+                >Проебать 1000 чикенбеконов</a
+              >
+            </div>
+          </div>
+          <div id="clickMinerSpacer" class="mdl-layout-spacer"></div>
+          <div
+            id="autoClickerCard"
+            class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet"
+          >
+            <div id="autoClickerCardImage" class="mdl-card__title"></div>
+            <div class="mdl-card__supporting-text">
+              <h3 id="autoClickerCardTitle">БОЛЬШАЯ СОСИСКА (Уровень 1)</h3>
+              <p>
+                "БОЛЬШАЯ СОСИСКА" издаёт свою мощь, производя постоянный поток
+                чикенбеконов, который никогда не прекратится!
+              </p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a
+                id="autoClickerCardPrice"
+                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onclick="buy('autoClicker')"
+                >Проебать 2500 чикенбеконов</a
+              >
+            </div>
+          </div>
+          <div id="autoClickerSpacer" class="mdl-layout-spacer"></div>
+          <div
+            id="clickPortalCard"
+            class="shopCard card-wide mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet"
+          >
+            <div id="clickPortalCardImage" class="mdl-card__title"></div>
+            <div class="mdl-card__supporting-text">
+              <h3 id="clickPortalCardTitle">МАЗЕЛЛОВ (Уровень 1)</h3>
+              <p>
+                Магическая упаковка, которая каким-то образом дает вам
+                чикенбеконы.
+              </p>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a
+                id="clickPortalCardPrice"
+                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                onclick="buy('clickPortal')"
+                >Проебать 5000 чикенбеконов</a
+              >
+            </div>
+          </div>
+          <div id="clickPortalSpacer" class="mdl-layout-spacer"></div>
         </div>
       </div>
+      <div id="cases">
+        <h3>Наёбки</h3>
+        <h5 id="noCases">Пока что у вас нет никаких наёбок :(</h5>
+        <div id="caseList" class="mdl-grid">
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </div>
+      <hr />
+      <span>
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+          onclick="showStats()"
+        >
+          Статистика
+        </button>
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+          onclick="showSettings()"
+        >
+          Настройки
+        </button>
+        <br /><br />
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--yellow mdl-color-text--black"
+          onclick="saveGame()"
+        >
+          Сохранить
+        </button>
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--red-600"
+          onclick="deleteSave()"
+        >
+          Сбросить
+        </button>
+      </span>
+      <hr />
+      <div class="footer">
+        <p>
+          The original clicker project was created by
+          <a
+            id="footer"
+            data-umami-event="hunter-parcells"
+            href="https://github.com/hparcells"
+            target="_blank"
+            ><b>Hunter Parcells</b></a
+          >
+        </p>
+        <p>
+          Адаптировано под русский язык и отредактировано под стримера
+          <a
+            id="footer"
+            data-umami-event="mazellovvv"
+            href="https://www.twitch.tv/mazellovvv"
+            target="_blank"
+            ><b>mazellovvv</b></a
+          >
+          ещё каким-то челом под ником
+          <a
+            id="footer"
+            data-umami-event="greysouls-twitch-channel-in-footer"
+            href="https://www.twitch.tv/realgreysoul"
+            target="_blank"
+            ><b>RealGreysoul</b></a
+          >
+        </p>
+        <p>
+          ©
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          <a
+            id="footer"
+            data-umami-event="greysoul-in-copyright"
+            href="https://greysoul.ru"
+            target="_blank"
+            ><b>Greysoul</b></a
+          >
+        </p>
+        <p>
+          <span
+            class="ageBadge"
+            title="Содержит нецензурную лексику и грубый юмор"
+            >18+</span
+          >
+        </p>
+      </div>
+      <div id="caseDialog" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <h3 id="openingCaseTitle">Производится открытие наёбки</h3>
+            <h5 id="youGot" style="display: none">Вы получили по ебалу:</h5>
+            <p id="theItem"></p>
+            <br />
+            <button
+              id="caseOkay"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+              style="display: none"
+            >
+              Хуйня какая-то выпала...
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="statsDialog" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <h3>Статистика</h3>
+            <p id="highestClicks"></p>
+            <p id="totalClicks"></p>
+            <p id="upgradesBought"></p>
+            <p id="casesOpened"></p>
+            <br />
+            <button
+              id="statsOkay"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+            >
+              Могло быть и лучше...
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="settingsDialog" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <h3>Настройки</h3>
+            <div class="setting">
+              <h5 id="soundText">Текущий звук при нажатии на кнопку</h5>
+              <br />
+              <select id="clickSounds" class="w3-select"></select>
+              <br />
+              <label
+                id="mobileSounds"
+                class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+                for="mobileSoundsCheckbox"
+              >
+                <input
+                  type="checkbox"
+                  id="mobileSoundsCheckbox"
+                  class="mdl-checkbox__input"
+                  checked
+                />
+                <span class="mdl-checkbox__label"
+                  >Включить звуки в мобильных браузерах</span
+                >
+              </label>
+            </div>
+            <br />
+            <button
+              id="settingsSave"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+            >
+              Сохранить
+            </button>
+            <button
+              id="settingsClose"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+            >
+              Не сохранять
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="deleteSaveDialog" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <h3>Сбросить все данные?</h3>
+            <p>Вы уверены, что хотите сбросить все данные?</p>
+            <p>Это действие сбросит все данные, включая статистику.</p>
+            <br />
+            <button
+              id="yesDelete"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--red-600"
+            >
+              Да
+            </button>
+            <button
+              id="noDelete"
+              class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+            >
+              Нет
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
     </div>
-    <div id="deleteSaveDialog" class="w3-modal">
+    <div id="warningDialog" class="w3-modal">
       <div class="w3-modal-content">
         <div class="w3-container">
-          <h3>Сбросить все данные?</h3>
-          <p>Вы уверены, что хотите сбросить все данные?</p>
-          <p>Это действие сбросит все данные, включая статистику.</p>
+          <h3>Внимание!</h3>
+          <p>
+            Сайт был создан в
+            <a
+              id="warning"
+              data-umami-event="warning-clicker-2021-twitch-clip"
+              href="https://www.twitch.tv/mazellovvv/clip/SuspiciousCredulousKumquatBrainSlug-15xJuJpYnXopD8tp"
+              target="_blank"
+              ><b>сентябре 2021 года</b></a
+            >
+            и содержит мемы, которые сейчас считаются кринжовыми и устаревшими.
+            Да, это так, но с тех пор сайт никак кардинально не менялся, поэтому
+            было решено ничего не менять. В связи с этим сайт сохранил обильное
+            наличие мата и грубого юмора, так что скажите, пожалуйста:
+            <b>вы совершеннолетний?</b>
+          </p>
           <br />
-          <button id="yesDelete"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button mdl-color--red-600">
+          <button
+            id="warningYes"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+          >
             Да
           </button>
-          <button id="noDelete"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
+          <button
+            id="warningNo"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black"
+          >
             Нет
           </button>
         </div>
       </div>
     </div>
-    <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
-      <div class="mdl-snackbar__text"></div>
-      <button class="mdl-snackbar__action" type="button"></button>
-    </div>
-  </div>
-  <div id="warningDialog" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <h3>Внимание!</h3>
-        <p>
-          Сайт был создан в
-          <a id="warning" data-umami-event="warning-clicker-2021-twitch-clip"
-            href="https://www.twitch.tv/mazellovvv/clip/SuspiciousCredulousKumquatBrainSlug-15xJuJpYnXopD8tp"
-            target="_blank"><b>сентябре 2021 года</b></a> и содержит мемы, которые сейчас считаются кринжовыми и
-          устаревшими. Да, это так, но с тех пор сайт никак кардинально не менялся, поэтому было решено ничего не
-          менять. В связи с этим сайт сохранил обильное наличие мата и грубого юмора, так что скажите, пожалуйста: <b>вы
-            совершеннолетний?</b>
-        </p>
-        <br />
-        <button id="warningYes"
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
-          Да
-        </button>
-        <button id="warningNo"
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--yellow mdl-color-text--black">
-          Нет
-        </button>
-      </div>
-    </div>
-  </div>
-  <script src="js/material.min.js"></script>
-  <script src="js/click-handler.js"></script>
-  <script src="js/upgrade-handler.js"></script>
-  <script src="js/sound-handler.js"></script>
-  <script src="js/util.js"></script>
-  <script src="js/modal-handler.js"></script>
-  <script src="js/save-handler.js"></script>
-  <script src="js/load.js"></script>
-  <script src="js/stats.js"></script>
-  <script src="js/case-handler.js"></script>
-  <script src="js/settings-handler.js"></script>
-  <script src="js/warning.js"></script>
-  <script src="js/upgrades/per-click.js"></script>
-  <script src="js/upgrades/click-bomb.js"></script>
-  <script src="js/upgrades/click-factory.js"></script>
-  <script src="js/upgrades/click-miner.js"></script>
-  <script src="js/upgrades/auto-clicker.js"></script>
-  <script src="js/upgrades/click-portal.js"></script>
-  <script src="js/cases/sound-case.js"></script>
-  <script src="js/cases/click-case.js"></script>
-</body>
-
+    <script src="js/material.min.js"></script>
+    <script src="js/click-handler.js"></script>
+    <script src="js/upgrade-handler.js"></script>
+    <script src="js/sound-handler.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/modal-handler.js"></script>
+    <script src="js/save-handler.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/case-handler.js"></script>
+    <script src="js/settings-handler.js"></script>
+    <script src="js/warning.js"></script>
+    <script src="js/upgrades/per-click.js"></script>
+    <script src="js/upgrades/click-bomb.js"></script>
+    <script src="js/upgrades/click-factory.js"></script>
+    <script src="js/upgrades/click-miner.js"></script>
+    <script src="js/upgrades/auto-clicker.js"></script>
+    <script src="js/upgrades/click-portal.js"></script>
+    <script src="js/cases/sound-case.js"></script>
+    <script src="js/cases/click-case.js"></script>
+  </body>
 </html>
