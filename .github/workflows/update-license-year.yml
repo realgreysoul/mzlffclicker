@@ -2,7 +2,7 @@ name: Update LICENSE year
 
 on:
     schedule:
-        - cron: "0 0 1 1 *"
+        - cron: "0 17 31 12 *"
     workflow_dispatch:
 
 permissions:
@@ -13,11 +13,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v6.0.2
+              uses: actions/checkout@v7
 
             - name: Update year in LICENSE
               run: |
-                  YEAR=$(date +%Y)
+                  YEAR=$(TZ="Asia/Bangkok" date +%Y)
                   sed -i "s/Copyright (c) [0-9]\{4\} Greysoul (Original repository created by Hunter Parcells)/Copyright (c) $YEAR Greysoul (Original repository created by Hunter Parcells)/" LICENSE
 
             - name: Commit and push
@@ -25,5 +25,6 @@ jobs:
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
                   git add LICENSE
-                  git diff --cached --quiet || git commit -m "chore: update LICENSE year to $(date +%Y)"
+                  YEAR=$(TZ="Asia/Bangkok" date +%Y)
+                  git diff --cached --quiet || git commit -m "chore: update LICENSE year to $YEAR"
                   git push
