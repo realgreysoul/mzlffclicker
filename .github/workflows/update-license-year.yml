@@ -2,7 +2,8 @@ name: Update LICENSE year
 
 on:
     schedule:
-        - cron: "0 17 31 12 *"
+        - cron: "0 0 1 1 *"
+          timezone: "Asia/Bangkok"
     workflow_dispatch:
 
 permissions:
